@@ -15,13 +15,10 @@
  *       */
 int main(void)
 {
-char sh;
-for (sh = 'a'; sh <= 'z'; sh++)
+int n;
+for (n = '0'; n <= '9'; n++)
 {
-if (sh != 'e' && sh != 'q')
-{
-	putchar(sh);
-}
+	putchar(n);
 }
 putchar('\n');
 return (0);

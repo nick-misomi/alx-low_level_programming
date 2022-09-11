@@ -1,10 +1,17 @@
 #include <stdio.h>
 /**
- * main - print if the number is postive, zero or negative
  *
- * this programme prints lowercase alphabet in reverse followed by new line
- * 
- */
+ *  * main - print if the number is postive, zero, or negative
+ *
+ *   *
+ *
+ *    * Description: using the main function
+ *
+ *     * this program prints "Programming is positive, zero, or negative
+ *
+ *      * Return: 0
+ *
+ *       */
 int main(void)
 {
 char c;
