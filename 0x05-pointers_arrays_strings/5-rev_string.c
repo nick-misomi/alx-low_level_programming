@@ -3,17 +3,18 @@
 #include "main.h"
 
 
-int str_len( char *s);
-void rev_string( char *s);
-int main()
+int str_len(char *s);
+void rev_string(char *s);
+int main(void)
 {
 	char s[50] = "My School";
-	printf (" String to be reversed is: %s", s);
-	
+
+	printf("String to be reversed is: %s", s);
+
 	revstr(s);
-	
-	printf (" The reverse string is: %s", s);
-	return 0;
+
+	printf("The reverse string is: %s", s);
+	return (0);
 }
 void rev_string(char *s)
 {
@@ -23,11 +24,11 @@ void rev_string(char *s)
 	len = str_len(s);
 	start = s;
 	end = s;
-	
-	for (i = 0; i < len -1; i++)
+
+	for (i = 0; i < len - 1; i++)
 	end++;
 
-	for (i = 0; i < len/2; i++)
+	for (i = 0; i < len / 2; i++)
 	{
 		tmp = *end;
 		*end = *start;
@@ -39,9 +40,9 @@ void rev_string(char *s)
 }
 int str_len(char *ptr)
 {
-	int i =  0;
+	int i = 0;
 
-	while (*(ptr + i) ! = '\0')
+	while (*(ptr + i) != '\0')
 	i++;
-	return i;
+	return (i);
 }
