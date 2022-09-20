@@ -12,7 +12,7 @@ void print_rev(char *s)
 {
 	int len = strlen(s);
 
-	for (len--;)
+	while (len--)
 		putchar(*(s + len));
 	putchar (10);
 }
