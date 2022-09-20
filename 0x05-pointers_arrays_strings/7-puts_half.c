@@ -3,7 +3,8 @@
 
 /**
 *puts_half - prints a string
-*@s: string to print*
+*@str: string
+*_strlen: returns length of string
 *returns: nothing
 */
 
@@ -12,12 +13,13 @@ void puts_half(char *str)
 	int i, len = _strlen(str);
 
 	for (i = ((len - 1) / 2) + 1; i < len; i++)
-		putchar (*(str +i));
+		putchar (*(str + i));
 	putchar (10);
 }
 /**
-* _strlen - returns the length of the string
-*@S: this a string
+*_strlen - returns the length of the string
+*@s: string
+*
 *return: length of the given string
 */
 
