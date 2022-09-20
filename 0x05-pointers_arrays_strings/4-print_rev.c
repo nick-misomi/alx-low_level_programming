@@ -3,15 +3,19 @@
 #include "main.h"
 
 /**
-*print_rev - prints astring in reverse order
-*@s: string to reverse
+*print_rev - prints a string in reverse order
+*@s: string to be printed in reverse
 *return: nothing
 */
+
 void print_rev(char *s)
 {
-	int len = strlen(s);
+	int i, n;
 
-	while (len--)
-		putchar(*(s + len));
-	putchar(10);
+	n = strlen(s);
+
+	for (i = n - 1; i >= 0; i--)
+	{
+		_putchar(s[i]);
+	}
 {
