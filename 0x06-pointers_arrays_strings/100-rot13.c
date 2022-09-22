@@ -6,8 +6,8 @@
 *
 *return: address of the encoded string
 */
-
-char *rot3(char *str)
+char transform_2(char x);
+char *rot13(char *str)
 {
 	int i = 0;
 
@@ -35,7 +35,12 @@ char transform_2(char x)
 
 	while (i < 52)
 	{
-		replacement = two[i];
-		break;
+		if (x == one[i])
+		{
+			replacement = two[i];
+			break;
+		}
+		i++;
 	}
+	return (replacement);
 }
