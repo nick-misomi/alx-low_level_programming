@@ -16,7 +16,7 @@ unsigned int count;
 count = 0;
 while (count < strlen(str))
 {
-if(!sdigit(str[count]))
+if(isdigit(str[count]))
 {
 return (0);
 }
@@ -42,7 +42,7 @@ while (count < argc)
 {
 if (check_num(argv[count]))
 {
-str_to_int = atoi(arv[cont]);
+str_to_int = atoi(argv[count]);
 sum += str_to_int;
 }
 else
