@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include <fcnt1.h>
+#include <fcntl.h>
 #include <unistd.h>
 
-void check_10_stat(int stat, int fd, char *filename, char mode);
+void check_IO_stat(int stat, int fd, char *filename, char mode);
 /**
  * main - copies the content of one file to another
  * @argc: argument count
@@ -15,19 +15,19 @@ void check_10_stat(int stat, int fd, char *filename, char mode);
  */
 int main(int argc, char *argv[])
 {
-	int src, dest, n_read = 1024, wrote, close_s_src, close_dest;
+	int src, dest, n_read = 1024, wrote, close_src, close_dest;
 	unsigned int mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char buffer[1024];
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "%S", "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "%s", "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	src = open(argv[1]' 0_RDONLY);
+	src = open(argv[1], O_RDONLY);
 	check_IO_stat(src, -1, argv[1],'0');
-	dest = open(argv[2], 0_WRONLY | 0_CREAT | 0_TRUNC, mode);
-	check_IO_stat(dest, -1, argv[2], 'W'
+	dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
+	check_IO_stat(dest, -1, argv[2], 'W');
 	while (n_read == 1024)
 	{
 		n_read = read(src, buffer, sizeof(buffer));
@@ -38,6 +38,8 @@ int main(int argc, char *argv[])
 			check_IO_stat(-1, -1, argv[2], 'W');
 	}
 	close_src = close(src);
+	check_IO_stat(close_src, src, NULL, 'C');
+	close_dest = close(dest);
 	check_IO_stat(close_dest, dest, NULL, 'C');
 	return (0);
 }
@@ -68,54 +70,3 @@ void check_IO_stat(int stat, int fd, char *filename, char mode)
 		exit(99);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
